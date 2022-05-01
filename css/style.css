@@ -1,0 +1,131 @@
+body{
+  overflow-x: hidden;
+}
+.magtopandbottom{
+  margin: 83px 0;
+}
+/* ------------------- General Style ------------------- */
+ion-icon {
+  font-size: 64px;
+  /* padding-top: 1rem; */
+}
+ion-icon {
+  --ionicon-stroke-width: 50px;
+  line-height: 5px;
+}
+button .btn-text{
+  font-size: 1.6rem;
+}
+#start-btn,
+#pause-btn,
+#stop-btn,
+#save-btn,
+#copy-btn{
+  box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.692);
+}
+/* ------------------- Header Style ------------------- */
+header{
+  width: 100%;
+  padding: 10px 0;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+}
+header .user-circle{
+  padding-top: 2rem;
+  cursor: pointer;
+  font-size: 4rem;
+}
+header .fa-bars i{
+  padding-top: 2rem;
+  cursor: pointer;
+  font-size: 4rem;
+  display: none;
+}
+header .fa-times i{
+  padding-top: 2rem;
+  cursor: pointer;
+  font-size: 4rem;
+  display: none;
+}
+
+/* ------------------- Side-Nav Style ------------------- */
+.sidenav{
+  background: rgba(46, 46, 121, 0.226);
+  height: 100%;
+  padding-top: 20px;
+  padding-left: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+}
+.sidenav ul{
+  padding-top: 100px;
+}
+.sidenav ul li{
+  list-style: none;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+  font-size: 18px;
+  cursor: pointer;
+  border-bottom: solid 1px gray;
+}
+.sidenav-mobile{
+  display: none;
+}
+/* ------------------- Dashboard Style ------------------- */
+.mainbox,
+.forwarder,
+.saved_bx,
+.help_bx{
+  padding: 0 5%;
+}
+.mainbox h3, .forwarder h3, .saved_bx h3, .help_bx h3{
+  letter-spacing: 2px;
+  /* font-weight: bold; */
+  font-size: 2.7rem;
+  font-family: tahoma;
+}
+/* ------------------- Mainbox Style ---------------------- */
+/* ------------------- Forwarder Style ---------------------- */
+/* ------------------- Mainbox Style ---------------------- */
+
+.forwarder{
+  padding-top: 10px;
+}
+.help_bx{
+  text-align: justify;
+  font-size: 1.7rem;
+}
+
+/* ------------------- Sign in/Sign up Style ------------------- */
+.nav a{
+  font-size: 15px;
+  display: block;
+  padding: 3px 0;
+}
+
+/* -------------------- Saved Notes --------------------------- */
+.saved_bx h3{
+  padding: 2rem 0;
+  padding-left: 3rem;
+}
+.listen-note{
+  padding: 0 2rem;
+}
+
+
+ /* Style the sidebar - fixed full height */
+/* .sidebar {
+  height: 100%;
+  width: 190px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 16px;
+} */

@@ -1,0 +1,73 @@
+/* Mobile View 0 - 768px */
+@media(max-width: 768px){
+    header{
+      width: 100%;
+      overflow: hidden;
+    }
+    header div .a{
+      width: 80%;
+    }
+    header div .b{
+      width: 20%;
+    }
+    header h2{
+      font-size: 3rem;
+    }
+    header .user-circle{
+      padding-top: 2rem;
+      cursor: pointer;
+      font-size: 4rem;
+      margin-left: -1.5rem;
+    }
+    header .fa-bars i,
+    header .fa-times i{
+      padding-top: 2rem;
+      cursor: pointer;
+      font-size: 4rem;
+      display: block;
+      margin-left: 1rem;
+    }
+    .fa-times{
+      display: hidden;
+    }
+    .sidenav{
+        display: none;
+        top: -200rem; left: 50%;
+      }
+      .sidenav-mobile{
+        width: 80%;
+        height: auto;
+        padding: 0;
+        background: white;
+        position: fixed;
+        top: 50%; left: 50%;
+        transform: translate(-50%, -50%);
+        box-shadow: 0 0 0 100vh rgba(0,0,0,.3);
+        border: .15rem solid blue !important;
+        border-radius: 10px;
+        opacity: 1;
+        z-index: 900;
+      }
+      .sidenav-mobile ul{
+        padding-top: 0;
+        width: 100%;
+        flex-flow: column;
+        padding: 2rem 0;
+      }
+      .sidenav-mobile ul li{
+        list-style: none;
+        margin: 1rem 0;
+        padding-left: 4rem;
+        font-size: 2rem;
+        cursor: pointer;
+        border-bottom: none;
+      }
+      .help_bx{
+        text-align: justify;
+        font-size: 1.5rem;
+      }
+      .help_bx h2{
+        font-size: 1.4rem;
+        text-align: center;
+      }
+  }
