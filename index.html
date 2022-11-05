@@ -1,126 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Sece App</title>
     <!-- <link rel="shortcut icon" href="logo.png" type="image/png"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="vendors/css/bootstrap-3.3.7-dist/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="vendors/css/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" type="text/css" href="vendors/css/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="vendors/css/bootstrap-3.3.7-dist/css/bootstrap.min.css"> -->
     <link rel="stylesheet" type="text/css" href="vendors/bootstrap-icons/bootstrap-icons.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/queries.css">
 </head>
+
 <body>
     <!-- =========================== HEADER ================================ -->
-    <header class="container-fluid bg-primary">
-        <div class="row">
-            <div class="col-lg-11 col-md-11 col-xs-9">
-                <h2 class="header-text">Sece App</h2>
-            </div>
-            <div class="col-lg-1 col-md-1 col-xs-1 user-circle">
-                <i class="bi bi-person-circle"></i>
-            </div>
-            <div class="col-lg-1 col-md-1 col-xs-1 fa-bars"><i class="bi bi-sliders"></i></div>
-            <div class="col-lg-1 col-md-1 col-xs-1 fa-times"><i class="bi bi-x"></i></div>
-        </div>
+    <header class="d-flex d-flex-sb">
+        <h1>SeceApp</h1>
+        <i class="bi bi-person-circle user-icon"></i>
     </header>
 
     <!-- =========================== SIDE NAVIGATION ================================ -->
-    <div class="container-fluid">
-        <div class="magtopandbottom"></div>
-        <div class="row">
-            <div class="col-lg-2 sidenav">
-                <ul>
-                    <li class="home" active><span class="glyphicon glyphicon-home"></span> Home</li>
-                    <li class="e-forwarder"><span class="glyphicon glyphicon-send"></span> Email Forwarder</li>
-                    <li class="extra"><i class="bi bi-collection-fill"></i> Saved Note</li>
-                    <li class="settings"><i class="bi bi-gear-fill"></i> Settings</li>
-                    <li class="help"><i class="bi bi-question-circle-fill"></i> Help</li>
-                </ul>
-            </div>
-            <div class="col-lg-2 sidenav-mobile">
-                <ul>
-                    <li class="home" active><span class="glyphicon glyphicon-home"></span> Home</li>
-                    <li class="e-forwarder"><span class="glyphicon glyphicon-send"></span> Email Forwarder</li>
-                    <li class="extra"><i class="bi bi-collection-fill"></i> Saved Note</li>
-                    <li class="settings"><i class="bi bi-gear-fill"></i> Settings</li>
-                    <li class="help"><i class="bi bi-question-circle-fill"></i> Help</li>
-                </ul>
-            </div>
-
-            <div class="col-lg-2 col-md-2"></div>
-            <!-- =========================== SPEECH RECOGNITION ================================ -->
-            <div class="col-lg-10 col-md-10 mainbox"><br>
-                <h3 class="text-center">Speech to Text Recognition</h3>
-                <br>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="col-lg-2 col-xs-12 form-group">
-                            <button type="button" id="copy-btn" class="form-control btn btn-info" onclick="myFunction(); copyText();"><span class="glyphicon glyphicon-copy"></span> Copy Note</button>
+    <main class="d-flex">
+        <nav class="nav">
+            <ul>
+                <li class="menu-item home-l active" title="Home">
+                    <i class="bi bi-house"></i>
+                    <h4>Home</h4>
+                </li>
+                <li class="menu-item forwarder-l" title="Email forwarder">
+                    <i class="bi bi-send"></i>
+                    <h4>Email Forwarder</h4>
+                </li>
+                <li class="menu-item saved-l" title="Saved Note">
+                    <i class="bi bi-collection"></i>
+                    <h4>Saved Note</h4>
+                </li>
+                <li class="menu-item settings-l" title="Settings">
+                    <i class="bi bi-gear"></i>
+                    <h4>Settings</h4>
+                </li>
+                <li class="menu-item help-l" title="Help">
+                    <i class="bi bi-question"></i>
+                    <h4>Help</h4>
+                </li>
+            </ul>
+        </nav>
+        <section class="container">
+            <!-- Dashboard Section -->
+            <div class="bg-dim pd dashboard">
+                <h2 class="text-center">Speech-to-text Recognition</h2>
+                <textarea id="textbox" class="auto-save" placeholder="Text Displays Here..."></textarea>
+                <div class="action-btns d-flex d-flex-sb">
+                    <div class="left d-flex d-flex-sb">
+                        <button id="copy-btn" onclick="myFunction(); copyText();" title="Copy Note">
+                            <i class="bi bi-clipboard"></i>
+                            <small>Copy Note</small>
+                        </button>
+                        <button id="pause-btn" title="Pause recording">
+                            <i class="bi bi-pause"></i>
+                        </button>
+                    </div>
+                    <div id="start-btn" title="Start recording">
+                        <div>
+                            <i class="bi bi-mic-fill"></i>
                         </div>
-                        <div class="col-lg-8">
-
-                        </div>
-                        <div class="form-group col-lg-2 col-xs-12">
-                            <button type="button" id="save-btn" class="form-control btn btn-primary"><i class="bi bi-folder-fill"></i> <span class="btn-text">Save Note</span></button>
-                        </div>
+                    </div>
+                    <div class="right d-flex d-flex-sb">
+                        <button id="stop-btn" title="Stop recording">
+                            <i class="bi bi-mic-mute-fill"></i>
+                        </button>
+                        <button id="save-btn" title="Save Note">
+                            <i class="bi bi-collection"></i>
+                            <small>Save Note</small>
+                        </button>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="form-group col-lg-12 col-xs-12">
-                        <textarea id="textbox" class="form-control auto-save" rows="12" placeholder="Text Displays Here..."></textarea>
-                    </div>
-                    <div class="form-group">
-                        <div class="form-group col-lg-2 col-xs-12">
-                            <button type="button" id="pause-btn" class="form-control btn btn-info"><i class="bi bi-pause-fill"></i> <span class="btn-text">Pause</span></button>
-                        </div>
-                        <div class="col-lg-1"></div>
-                        <div class="form-group col-lg-6 col-xs-12">
-                            <button type="button" id="start-btn" class="form-control btn btn-primary"><i class="bi bi-mic-fill"></i> <span class="btn-text">Start</span></button>
-                        </div>
-                        <div class="col-lg-1"></div>
-                        <div class="form-group col-lg-2 col-xs-12">
-                            <button type="button" id="stop-btn" class="form-control btn btn-info"><i class="bi bi-mic-mute-fill"></i> <span class="btn-text">Stop</span></button>
-                        </div>
-                    </div>
-                    <div class="form-group col-lg-12 col-xs-12">
-                    <br>
-                        <p id="instructions" class="text-center" style="font-size: 20px;">
-                            Click <strong>Start</strong> button to start recording
-                        </p>
-                    </div>
-                </div>
+                <p id="instructions" class="text-center" style="font-size: 20px;">
+                    Click
+                    <strong>
+                        <i class="bi bi-mic"></i>
+                    </strong> button to start recording
+                </p>
             </div>
 
-            <!-- =========================== EMAIL FORWARDER ================================ -->
-            <div class="col-lg-10 forwarder">
-                    <h2 class="text-center">Email Forwarder</h2>
-                    <br>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <form role="form">
-                                <div class="form-group col-lg-12 col-md-12">
-                                    <input type="text" name="subject" class="form-control" placeholder="Subject/Title *" required>
-                                </div>
-                                <div class="form-group col-lg-12 col-md-12">
-                                    <input type="date" name="subject" class="form-control" placeholder="Date" required>
-                                </div>
-                                <div class="form-group col-lg-12 col-md-12">
-                                    <textarea class="form-control" rows="12" placeholder="Paste copied text here.." required></textarea>
-                                </div>
-                                <div class="form-group col-lg-10 col-xs-0">
-                                </div>
-                                <div class="form-group col-lg-2 col-xs-12">
-                                    <button type="button" class="form-control btn btn-primary" title="Send to Mail"><span class="glyphicon glyphicon-send"></span> Send to email</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>   
+            <!-- Email Forwarder Section -->
+            <div class="bg-dim pd forwarder">
+                <h2 class="text-center">Email Forwarder</h2>
+                <form>
+                    <div>
+                        <input type="text" name="subject" placeholder="Subject/Title *" required>
+                    </div>
+                    <div>
+                        <input type="date" name="subject" placeholder="Date" required>
+                    </div>
+                    <div>
+                        <textarea placeholder="Paste copied text here.." required></textarea>
+                    </div>
+                    <div>
+                        <button type="button" title="Send to Mail">
+                            <span class="glyphicon glyphicon-send"></span> Send to email</button>
+                    </div>
+                </form>
             </div>
-            <!-- =========================== EXTRA ================================ -->
-            <div class="col-lg-10 saved_bx">
+
+            <!-- Saved Note Section -->
+            <div class="bg-white saved_note">
                 <h3>My Notes</h3>
                 <ul id="notes">
                     <li>
@@ -128,12 +114,43 @@
                     </li>
                 </ul>
             </div>
-            <!-- =============================== HELP ================================= -->
-            <div class="col-lg-10 help_bx">
-                <h3 class="text-center">Help</h3>
+
+            <!-- Setting Section -->
+            <div class="bg-white pd settings">
+                <h2 class="text-center">Settings</h2>
+                <ul>
+                    <li>
+                        <span>Dark Mode</span>
+                        <div id="dark-btn" class="toggle-btn">
+                            <span></span>
+                        </div>
+                    </li>
+                    <li>
+                        <span>Auto-save</span>
+                        <div id="auto-save-btn" class="toggle-btn">
+                            <span></span>
+                        </div>
+                    </li>
+                    <li>
+                        <span>Disable Copy Button</span>
+                        <div id="disable-toggle-btn" class="toggle-btn">
+                            <span></span>
+                        </div>
+                    </li>
+                </ul>
+
+                <p class="text-center credits">Designed and Built by
+                    <strong>Olatona Moyinoluwa</strong>
+                </p>
+            </div>
+
+            <!-- Help Section -->
+            <div class="bg-white pd help">
+                <h2 class="text-center">Help</h2>
                 <p>
-                    <h2>Secretary App</h2> <br>
-                    The secretary app is a great assistance for the recording, editing and saving activities taken place in  a meeting.
+                    <h2>Secretary App</h2>
+                    <br> The secretary app is a great assistance for the recording, editing and saving activities taken place
+                    in a meeting.
                     <br>
                     <h4>Features:</h4>
                     <ol>
@@ -147,83 +164,18 @@
                         <li>An Email forwarder that sends recorded text to an email</li>
                     </ol>
                     <h4>Sections</h4>
-                    i.	Home
-                    ii.	E-mail Forwarder
-                    iii.	Extras
-                    iv.	Settings
-                    Home Section
-                    In this section of the application, you have five (5) buttons with each of them having its own unique functionalities.
-                    The 5 buttons and their functionality:
+                    i. Home ii. E-mail Forwarder iii. Extras iv. Settings Home Section In this section of the application, you have five (5)
+                    buttons with each of them having its own unique functionalities. The 5 buttons and their functionality:
                 </p>
             </div>
-
-            <!-- =========================================================== -->
-        </div>
-    </div>
-    
-    <!-- =============================== SIGN IN PAGE ================================= -->
-    <div class="container sign_in">
-        <h2 class="text-center">Sign In</h2>
-        <br>
-        <div class="row">
-            <div class="col-lg-6">
-
-            </div>
-            <div class="col-lg-6">
-                <form role="form" action="">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Email">
-                    </div>
-                    <div class="form-group">
-                        <input type="password" class="form-control" placeholder="Password">
-                    </div>
-                    <div class="form-group">
-                        <button type="submit" class="form-control btn btn-primary">Sign in</button>
-                    </div>
-                </form>
-                <div class="col-lg-12 text-center nav">
-                    <a href="#">New User? Sign Up</a>
-                    <a href="#">Forgot Password</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container sign_up">
-        <h2 class="text-center">Sign Up</h2>
-        <br>
-        <div class="row">
-            <div class="col-lg-6">
-            </div>
-            <div class="col-lg-6">
-                <form role="form" action="">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Email">
-                    </div>
-                    <div class="form-group">
-                        <input type="password" class="form-control" placeholder="Password">
-                    </div>
-                    <div class="form-group">
-                        <input type="password" class="form-control" placeholder="Confirm Password">
-                    </div>
-                    <div class="form-group">
-                        <button type="submit" class="form-control btn btn-info">Sign up</button>
-                    </div>
-                </form>
-                <div class="col-lg-12 text-center nav">
-                    <a href="#">Already Registered? Sign In</a>
-                </div>
-                
-            </div>
-        </div>
-    </div>
+        </section>
+    </main>
 
     <!-- =============================== Javascript File ================================= -->
     <script src="vendors/js/jquery2.js"></script>
-    <script src="vendors/css/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <script src="js/savy.min.js"></script>
-	<script src="js/savy.min.js"></script>
+    <script src="vendors/js/savy.min.js"></script>
+    <script src="js/savy.js"></script>
     <script src="js/script.js"></script>
 </body>
+
 </html>
